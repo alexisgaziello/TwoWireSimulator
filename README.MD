@@ -26,7 +26,7 @@ I will keep things simple. Here are the most important registers we need to unde
 
 Here is a diagram of what is happening (even if it is not in the order, this is the idea):
 
-![alt text](https://github.com/alexisgaziello/TwoWireSimulator/blob/master/imgs/diagram.png)
+![Diagram](https://github.com/alexisgaziello/TwoWireSimulator/blob/master/imgs/diagram.png)
 
 **Idea**
 
@@ -49,6 +49,6 @@ Address 3:	A	B	C	0	1	E	F
 Address 4:	A	B	C	1	1	E	F
 </pre>
 
-For 3 bits 8 addresses, etc. You get the idea. 2^(bits masked) = number of addresses we can use.
+For 3 bits 8 addresses, etc. You get the idea. 2<sup>(bits masked)</sup> = number of addresses we can use.
 
 However, be careful, some addresses are not allowed to be used because the I2C protocol needs them to work properly. You should only use addresses between 8 and 119. The first and last 8 are reserved.
