@@ -6,7 +6,7 @@ I have been working on a project in which I worked with several I2C sensors that
 
 ## Use
 
-See *example.ino* file for an implementation.
+See *example.ino* file for an implementation in an arduino that will act as multiple I2C slave devices. The implementation in the master device is the same as it would be in normal use.
 There are two ways to configure the class object WireSim:
 - By giving the addresses (the mask will be calculated accordingly).
   - Be careful!! When submitting addresses make sure that most bits are common. If not the mask calculated will be big and lots of addresses will be disabled. 
