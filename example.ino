@@ -9,6 +9,9 @@
 TwoWireSimulator WireSim;
 
 void setup() {
+  //For printing purposes
+  Serial.begin(9600);
+  //Addresses we have chosen:
   char addresses[3] = {0x8, 0x9, 0xA};
   //Addresses are: 0b 0000 1000, 0b 0000 1001 and 0b 0000 1010 which means the mask will be: 0b 0000 0011
   WireSim.begin(addresses[0], 3);
@@ -21,10 +24,6 @@ void loop() {
   delay(100);
 }
 
-int simulador(int max, int min, int last, bool up, int percentage){
-  return up ? last + int((max-min)*percentage/100) : last - int((max-min)*percentage/100);
-}
-
 void requestEvent (){
   switch (WireSim.lastAddress()) {
     case (0x9): //Acelerador
@@ -35,6 +34,7 @@ void requestEvent (){
       break;
 
     case (0x8): //T1
+      Serial.print("Sending a 6 from I2C device number 8");
       WireSim.write(6);
       break;
 
@@ -45,4 +45,13 @@ void requestEvent (){
     default:
       break;
   }
+}
+
+void receiveEvent(int howMany) {
+  while (1 < Wire.available()) { // loop through all but the last
+    char c = Wire.read(); // receive byte as a character
+    Serial.print(c);         // print the character
+  }
+  int x = Wire.read();    // receive byte as an integer
+  Serial.println(x);         // print the integer
 }
