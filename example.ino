@@ -11,9 +11,10 @@ TwoWireSimulator WireSim;
 void setup() {
   //For printing purposes
   Serial.begin(9600);
-  //Addresses we have chosen:
+  // Addresses we have chosen:
   char addresses[3] = {0x8, 0x9, 0xA};
-  //Addresses are: 0b 0000 1000, 0b 0000 1001 and 0b 0000 1010 which means the mask will be: 0b 0000 0011
+  // Addresses are: 0b 0000 1000, 0b 0000 1001 and 0b 0000 1010 so the resultant mask will be: 0b 0000 0011
+  // This means that the address 0b 0000 1011 will also be active.
   WireSim.begin(addresses[0], 3);
   // Attach a function to trigger when something is received.
   WireSim.onReceive(receiveEvent);
