@@ -13,7 +13,7 @@ There are two ways to configure the class object WireSim:
 
 - By directly providing the mask and one address (there is no importance in which address is given).
 
-The mask may disable more addresses than you need. Make sure theses addresses are not used by other devices.
+The mask may disable more addresses than you need. Make sure these addresses are not used by other devices.
 
 ## Requirements
 
