@@ -4,6 +4,17 @@
 
 I have been working on a project in which I worked with several I2C sensors that gave me information. However, for testing purposes I wrote this extension of the library “Wire.h” to let me simulate with an Arduino the behaviour of several I2C devices.
 
+## Use
+
+See *example.ino* file for an implementation.
+There are two ways to configure the class object WireSim:
+- By giving the addresses (the mask will be calculated accordingly).
+  - Be careful!! When submitting addresses make sure that most bits are common. If not the mask calculated will be big and lots of addresses will be disabled. 
+
+- By directly providing the mask and one address (there is no importance in which address is given).
+
+The mask may disable more addresses than you need. Make sure theses addresses are not used by other devices.
+
 ## Requirements
 
 - *Wire.h* library (from arduino's official repository)
