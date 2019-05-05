@@ -23,7 +23,7 @@ The mask may disable more addresses than you need. Make sure these addresses are
 ## How does it work?
 
 If you want to understand the code I wrote you will have to learn a little about the Arduino’s hardware architecture.
-A micro controller has several processing registers. These registers usually consist of a small amount of fast storage quickly accessible location available to a computer's central processing unit (CPU). We are going to focus on the Two Wire registers (TW).
+A micro controller has several registers, that usually consist of a small amount of fast storage quickly accessible location available to a computer's central processing unit (CPU). We are going to focus on the Two Wire registers (TW).
 
 The micro controller used by the Arduino Uno is called ATMega 328. There will be much more information in the section 22 - 2 wire Serial Interface - of the controller datasheet, if you are interested. This document is attached at the end of the article.
 
